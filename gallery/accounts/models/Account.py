@@ -26,7 +26,6 @@ class Account(models.Model):
     )
 
 
-
     email = models.EmailField(
         max_length=30,
         unique=True,
