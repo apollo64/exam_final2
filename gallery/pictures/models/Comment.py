@@ -1,8 +1,5 @@
 from django.db import models
 
-# from gallery.accounts.models import Account
-# from gallery.pictures.models import Picture
-
 
 class Comment(models.Model):
     text = models.TextField(

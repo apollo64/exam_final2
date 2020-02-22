@@ -27,6 +27,6 @@ class Picture(models.Model):
     )
     date = models.DateField(
         verbose_name="Дата добавления",
-        auto_now_add=True,
+        auto_now_add=True
     )
 

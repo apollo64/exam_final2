@@ -9,4 +9,24 @@
 {% endblock %}
 
 {% block content %}
+{% for picture in pictures %}
+         {% if picture.status == False %}
+        {% else %}
+            <tr>
+                <td>{{ picture.id }}</td>
+                <td>{{ picture.title }} </td>
+                <td>{{ picture.date|date:'d.m.Y' }}</td>
+                <td>{{ picture.image}}</td>
+                <td><a href="#" >Детали</a></td>
+                </tr>
+        {% endif%}
+        {% empty %}
+            <tr>
+                <td colspan="10">
+                    <div class="no-content">
+                        <p class="no-content-text">Картинок пока нет</p>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
 {% endblock %}

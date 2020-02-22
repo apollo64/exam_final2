@@ -11,7 +11,7 @@ class PictureUploadForm(forms.ModelForm):
         })
     )
 
-    picture = forms.ImageField(label='Картинка', required=False, type='jpg' 'jpeg' 'png')
+    picture = forms.ImageField(label='Картинка', required=False)
 
     class Meta:
         model = Picture
