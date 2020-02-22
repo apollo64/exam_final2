@@ -31,3 +31,10 @@ class Comment(models.Model):
         blank=False,
         default=None
     )
+
+    date = models.DateField(
+        verbose_name="Дата добавления",
+        null=True,
+        blank=True,
+        default=None
+    )

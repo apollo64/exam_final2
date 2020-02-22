@@ -1,5 +1,5 @@
 <!doctype html>
-{% load staticfiles %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,16 +12,16 @@
 <body>
     <nav class="navbar" >
         <ul class="menu">
-            <li><a href="{% url 'library:index' %}">На главную</a></li>
+            <li><a href="{% url 'pictures:index' %}">На главную</a></li>
             <li><a href="#">Комментарии:</a></li>
-            <li><a href="{% url 'accounts:list' %}">Список пользователей</a></li>
+            <li><a href="#">Список пользователей</a></li>
             {% if user.is_authenticated %}
            {% block menu_links %}{% endblock %}
-    <li class="menu-right"><a href="{% url 'accounts:logout' %}" class="nav-link">Выход</a></li>
-    <li class="menu-right">Привет, <a href="{% url 'accounts:user_detail' user.pk %}"> {{ user.username }}</a>!</li>
+    <li class="menu-right"><a href=""#"" class="nav-link">Выход</a></li>
+    <li class="menu-right">Привет, <a href="#"> {{ user.username }}</a>!</li>
        {% else %}
-           <li class="menu-right"><a href="{% url 'accounts:login' %}" class="nav-link">Вход</a></li>
-        <li class="menu-right"><a href="{% url 'accounts:create' %}" class="nav-link">Регистрация</a></li>
+           <li class="menu-right"><a href="#" class="nav-link">Вход</a></li>
+        <li class="menu-right"><a href="#" class="nav-link">Регистрация</a></li>
        {% endif %}
         </ul>
     </nav>
