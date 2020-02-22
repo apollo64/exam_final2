@@ -7,7 +7,8 @@ class Account(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.PROTECT,
-        related_name='Пользователь'
+        related_name='Пользователь',
+        verbose_name='аккаунт'
     )
 
     name = models.CharField(
