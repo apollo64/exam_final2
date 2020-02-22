@@ -1,13 +1,15 @@
 from django.db import models
 
-# Create your models here.
-from gallery.accounts.models import Account
-
 
 class Picture(models.Model):
-    account = models.ForeignKey(Account,
-                                related_name='account',
+    account = models.ForeignKey('accounts.Account',
+                                related_name='picture_account',
                                 on_delete=models.CASCADE,
+                                )
+
+    comment = models.ForeignKey('pictures.Comment',
+                                related_name='picture_comment',
+                                on_delete=models.CASCADE
                                 )
 
     title = models.CharField(
@@ -19,6 +21,8 @@ class Picture(models.Model):
     average_rating = models.DecimalField(
         verbose_name="Средняя оценка",
         max_digits=3,
+        decimal_places=1,
         blank=True,
         default=None,
     )
+

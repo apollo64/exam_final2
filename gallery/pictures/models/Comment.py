@@ -1,7 +1,7 @@
 from django.db import models
 
-from gallery.accounts.models import Account
-from gallery.pictures.models import Picture
+# from gallery.accounts.models import Account
+# from gallery.pictures.models import Picture
 
 
 class Comment(models.Model):
@@ -12,21 +12,22 @@ class Comment(models.Model):
         default=None
     )
 
-    user = models.ForeignKey(Account,
-                             related_name="user",
+    account = models.ForeignKey('accounts.Account',
+                             related_name="comment_user",
                              on_delete=models.CASCADE,
                              verbose_name='комменты-пользователи'
 
                              )
 
-    picture = models.ForeignKey(Picture,
-                                related_name="users",
+    picture = models.ForeignKey('pictures.Picture',
+                                related_name="picture_user",
                                 on_delete=models.CASCADE,
                                 verbose_name="комменты-картинки"
                                 )
 
-    mark = models.DecimalField(
-        max_digits=1,
+    rating = models.DecimalField(
+        max_digits=2,
+        decimal_places=1,
         blank=False,
         default=None
     )
