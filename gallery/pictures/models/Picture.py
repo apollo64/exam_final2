@@ -8,7 +8,7 @@ class Picture(models.Model):
     account = models.ForeignKey(Account,
                                 related_name='account',
                                 on_delete=models.CASCADE,
-    )
+                                )
 
     title = models.CharField(
         verbose_name="Заголовок",
